@@ -3,14 +3,13 @@
 
 using namespace std;
 
-void fun() {
-    cout << "Ciao" << endl;
-    return;
+int ritorna_2() {
+    return 2;
 }
 
 int main()
 {
-    fun();
+    cout << ritorna_2() << endl;
 
     return 0;
 }

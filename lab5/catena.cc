@@ -8,8 +8,8 @@ int main()
     int numero_anelli_ferro = 0;
     int numero_anelli_rame = 0;
     const int MAX_ANELLI_RAME = 2;
-    int posizione_rame_1;
-    int posizione_rame_2;
+    int posizione_rame_1 = 0;
+    int posizione_rame_2 = 0;
     int rame_o_ferro;
 
     while (1)
@@ -30,7 +30,7 @@ int main()
 
             // Inserimento materiale con controllo
             do {
-                cout << "Anello di rame o di ferro (1 per rame, 2 per ferro)" << endl;
+                cout << "Anello di rame o di ferro (1 per fero, 2 per rame)" << endl;
                 cin >> rame_o_ferro;
             } while (rame_o_ferro != 1 && rame_o_ferro != 2);            
 
@@ -41,11 +41,11 @@ int main()
             } while (posizione < 1 || posizione > (numero_anelli_ferro + numero_anelli_rame + 1));
 
             // Aggiungere anello di ferro
-            if (rame_o_ferro == 2) {
+            if (rame_o_ferro == 1) {
                 numero_anelli_ferro++;
             }
             // Aggiungere anello di rame
-            if (rame_o_ferro == 1) {
+            if (rame_o_ferro == 2) {
 
                 if (numero_anelli_rame == MAX_ANELLI_RAME)
                     cout << "Numero massimo anelli di rame già raggiunto, azione fallita" << endl;
@@ -91,13 +91,15 @@ int main()
             break;
 
         case 3:
-
+            cout << posizione_rame_1 << " " << posizione_rame_2 << endl;
             for (int i = 1; i <= (numero_anelli_rame + numero_anelli_ferro); i++)
             {
+                cout << i << "\t";
                 if (i == posizione_rame_1 || i == posizione_rame_2)
                     cout << "R";
                 else
                     cout << "F";
+                cout << endl;
             }
             cout << endl;
 
