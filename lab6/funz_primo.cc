@@ -12,7 +12,6 @@ bool isPrime(int p) {
         if(p % i == 0) return false;
     }
     return true;
-    
 }
 
 int main()
