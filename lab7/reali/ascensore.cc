@@ -25,8 +25,11 @@ int main()
     while (true)
     {
         cout << "Posizione attuale: " << posizione_ascensore << endl;
-        cout << "Inserire il numero di scatti da fare" << endl;
+        cout << "Inserire il numero di scatti da fare (Inserire 0 per terminare)" << endl;
         cin >> numero_scatti;
+
+        if (numero_scatti == 0)
+            return 0;
 
         Direzione dir;
         if (numero_scatti < 0)
@@ -36,20 +39,25 @@ int main()
 
         for (int i = 0; i < abs(numero_scatti); i++)
         {
-            if ((posizione_ascensore >= 20.0 && dir == su) || posizione_ascensore <= -20.0 && dir == giu)
+            if ((posizione_ascensore >= POSIZIONE_MAX && dir == su) || posizione_ascensore <= POSIZIONE_MIN && dir == giu)
             {
                 cout << "L'ascensore è al limite, impossibile procedere" << endl;
                 break;
             }
             posizione_ascensore = singolo_impulso(posizione_ascensore, dir);
-
-            //if (posizione_ascensore > 0)
-            //    posizione_ascensore += 0.05;
-            //if (posizione_ascensore < 0)
-            //    posizione_ascensore -= 0.05;
-
-            //posizione_ascensore = static_cast<float>(static_cast<int>(posizione_ascensore * 10)) / 10;
         }
+
+        if (posizione_ascensore > 0)
+            posizione_ascensore += 0.05;
+        if (posizione_ascensore < 0)
+            posizione_ascensore -= 0.05;
+
+        posizione_ascensore = static_cast<float>(static_cast<int>(posizione_ascensore * 10)) / 10;
+
+        if(posizione_ascensore == 1.0) {
+            cout << "non staccare le funi!!!" << endl;
+        }
+        else cout << "staccare le funi" << endl;
     }
 
     return 0;
