@@ -52,7 +52,7 @@ int main()
         if (posizione_ascensore < 0)
             posizione_ascensore -= 0.05;
 
-        posizione_ascensore = static_cast<float>(static_cast<int>(posizione_ascensore * 10)) / 10;
+        posizione_ascensore = (static_cast<int>(posizione_ascensore * 10)) / 10.0;
 
         if(posizione_ascensore == 1.0) {
             cout << "non staccare le funi!!!" << endl;
