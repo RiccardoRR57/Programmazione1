@@ -4,7 +4,8 @@
         "cmath": "cpp",
         "iomanip": "cpp",
         "random": "cpp",
-        "limits": "cpp"
+        "limits": "cpp",
+        "ostream": "cpp"
     },
     "C_Cpp.errorSquiggles": "Disabled"
 }
