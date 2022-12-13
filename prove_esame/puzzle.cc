@@ -71,8 +71,9 @@ bool cerca_parola_verticale(const puzzle_t &puzzle, char parola[])
 	for (int i = lungh_parola; i <= puzzle.lungh_riga; i++)
 	{
 		cout << "una iterazione" << endl;
-		for(int j = 0; j < lungh_parola; j++) {
-			if(parola[j] == puzzle.mat_puzzle[])
+		for (int j = 0; j < lungh_parola; j++)
+		{
+			if (parola[j] == puzzle.mat_puzzle[])
 		}
 		return true;
 	}
